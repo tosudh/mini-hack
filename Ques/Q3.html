@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 3</title>
+  </head>
+  <body>
+    <label for="num">Enter a str</label>
+    <input id="str" type="text" value="Hello world" />
+    <input id="start" type="number" value="0" />
+    <input id="end" type="number" value="5" />
+
+    <button>Find</button>
+    <span id="result"></span>
+    <script>
+      let btn = document.querySelector("button");
+      let inputStr = document.getElementById("str");
+      let inputStart = document.getElementById("start");
+      let inputEnd = document.getElementById("end");
+      let resultSpan = document.getElementById("result");
+      function subString(s, start, end) {
+        if (end == undefined) {
+          end = start;
+          start = 0;
+        }
+
+        let result = "";
+        for (var i = start; i < end; i++) {
+          result += s[i];
+        }
+        return result;
+      }
+
+      btn.addEventListener("click", () => {
+        resultSpan.textContent = subString(inputStr.value,inputStart.value,inputEnd.value)
+      });
+    </script>
+  </body>
+</html>
