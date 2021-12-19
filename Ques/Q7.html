@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 7</title>
+  </head>
+
+  <body>
+    <label for="str">Enter a String</label>:</label>
+    <input id="str" type="text" value="aabbccde" />
+    <button>Remove Duplicates</button>
+    <p></p>
+    <p></p>
+    <p></p>
+    <span id="result"></span>
+    <script>
+      let btn = document.querySelector("button");
+      let str = document.getElementById("str");
+      let resultSpan = document.getElementById("result");
+
+      btn.addEventListener("click", () => {
+        resultSpan.innerText = returnString(str.value,0);
+      });
+      function returnString(s,i){
+            if(i>=s.length){return '';} 
+            if(s[i]==s[i+1]){return s[i]+returnString(s,i+2)}
+            else{return s[i]+returnString(s,i+1)}
+        }
+
+    </script>
+  </body>
+</html>
