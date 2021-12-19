@@ -9,7 +9,7 @@
 
   <body>
     <label for="str">Enter a String</label>:</label>
-    <input id="str" type="text" value="aabbccde" />
+    <input id="str" type="text" value="aabbbccde" />
     <button>Remove Duplicates</button>
     <p></p>
     <p></p>
@@ -25,8 +25,12 @@
       });
       function returnString(s,i){
             if(i>=s.length){return '';} 
-            if(s[i]==s[i+1]){return s[i]+returnString(s,i+2)}
-            else{return s[i]+returnString(s,i+1)}
+            if(s[i-1] && s[i]==s[i-1]){
+              return returnString(s,i+1)
+            }
+            else{
+              return s[i]+returnString(s,i+1)
+            }
         }
 
     </script>
