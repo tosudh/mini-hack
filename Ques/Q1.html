@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Hackathon</title>
+</head>
+<body>
+    <h1>Hi,<span id="name">Sudhanshu</span>  here</h1>
+    <br>
+    <span id="result"></span>
+    <br>
+    <button>calculateVowels</button>
+    <div> </div>
+    <br>
+    <span>here is link to my 
+        <a href="https://github.com/tosudh">GitHub</a>
+    </span>
+    <script>
+        let btn=document.querySelector('button')
+        let nameSpan = document.getElementById('name')
+        let resultSpan = document.getElementById('result')
+        btn.addEventListener('click',() => {
+            let name = nameSpan.textContent;
+            let result =''
+            for (const alpha of name) {
+
+                if(alpha=='a'||alpha=='e'||alpha=='i'||alpha=='o'||alpha=='u'||
+                alpha=='A'||alpha=='E'||alpha=='I'||alpha=='O'||alpha=='U'
+                ){
+                    result += alpha;
+                }
+                else{
+                    result+=" "
+                }
+                resultSpan.textContent="Vowels in name: "+result;
+            }
+        })
+    </script>
+</body>
+</html>
